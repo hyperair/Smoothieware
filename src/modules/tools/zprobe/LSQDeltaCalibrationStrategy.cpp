@@ -204,7 +204,7 @@ bool LSQDeltaCalibrationStrategy::calibrate(int num_factors, int sample_count, f
         options['C'] = 0;
         options['D'] = 0;
         options['E'] = 0;
-        options['F'] = 0;
+        options['H'] = 0;
         THEKERNEL->robot->arm_solution->set_optional(options);
     } else {
         // get current trim, and continue from that
@@ -223,7 +223,7 @@ bool LSQDeltaCalibrationStrategy::calibrate(int num_factors, int sample_count, f
         gcode->stream->printf("Tower B radius: %.4f\r\n", options['R'] + options['B']);
         gcode->stream->printf("Tower B  angle: %.4f\r\n", 330 + options['E']);
         gcode->stream->printf("Tower C radius: %.4f\r\n", options['R'] + options['C']);
-        gcode->stream->printf("Tower C  angle: %.4f\r\n", 90 + options['F']);
+        gcode->stream->printf("Tower C  angle: %.4f\r\n", 90 + options['H']);
     }
 
     // Sample bed Z height
